@@ -21,62 +21,110 @@ const Navigation = () => {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
             onClick={habdleButton}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          <div className="navbar-nav ">
+            <Link className="nav-link active" href="/">
+              Home
+            </Link>
+            <Link className="nav-link" href="/components/AboutPage">
+              AboutUs
+            </Link>
+            <Link className="nav-link" href="/components/ServicePage">
+              Services
+            </Link>
+
+            <Link className="nav-link" href="/components/ContactPage">
+              Contact
+            </Link>
+
+            <Link className="nav-link" href="#" onClick={handleNavbar}>
+              Pages
+            </Link>
+            <ul
+              className={`${
+                dropDown
+                  ? `top-full d-block visible `
+                  : "top-[110%] invisible d-none"
+              } dropdownCss`}
+            >
+              <li>
+                <Link href="/components/ServicePageTwo" className="nav-link">
+                  ServiceTwo
+                </Link>
+              </li>
+              <li>
+                <Link href="/components/Price" className="nav-link">
+                  Price
+                </Link>
+              </li>
+              <li>
+                <Link href="/components/GalleryPage" className="nav-link">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link href="/components/Team" className="nav-link">
+                  Team
+                </Link>
+              </li>
+            </ul>
+          </div>
           {ButtonVisible && (
-            <div className="navbar-nav">
-              <Link className="nav-link active" href="/">
-                Home
-              </Link>
-              <Link className="nav-link" href="/components/AboutPage">
-                AboutUs
-              </Link>
-              <Link className="nav-link" href="/components/ServicePage">
-                Services
-              </Link>
+            <div className="navbar-mobile">
+              <div className="navbar-nav navigation">
+                <Link className="nav-link active" href="/">
+                  Home
+                </Link>
+                <Link className="nav-link" href="/components/AboutPage">
+                  AboutUs
+                </Link>
+                <Link className="nav-link" href="/components/ServicePage">
+                  Services
+                </Link>
 
-              <Link className="nav-link" href="/components/ContactPage">
-                Contact
-              </Link>
+                <Link className="nav-link" href="/components/ContactPage">
+                  Contact
+                </Link>
 
-              <Link className="nav-link" href="#" onClick={handleNavbar}>
-                Pages
-              </Link>
-              <ul
-                className={`${
-                  dropDown
-                    ? `top-full d-block visible `
-                    : "top-[110%] invisible d-none"
-                } dropdownCss`}
-              >
-                <li>
-                  <Link href="/components/ServicePageTwo" className="nav-link">
-                    ServiceTwo
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components/Price" className="nav-link">
-                    Price
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components/GalleryPage" className="nav-link">
-                    Gallery
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components/Team" className="nav-link">
-                    Team
-                  </Link>
-                </li>
-              </ul>
+                <Link className="nav-link" href="#" onClick={handleNavbar}>
+                  Pages
+                </Link>
+                <ul
+                  className={`${
+                    dropDown
+                      ? `top-full d-block visible `
+                      : "top-[110%] invisible d-none"
+                  } dropdownCss`}
+                >
+                  <li>
+                    <Link
+                      href="/components/ServicePageTwo"
+                      className="nav-link"
+                    >
+                      ServiceTwo
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/components/Price" className="nav-link">
+                      Price
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/components/GalleryPage" className="nav-link">
+                      Gallery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/components/Team" className="nav-link">
+                      Team
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </div>
